@@ -1,4 +1,4 @@
-# Just A MLX implementation
+# Just A MLX implementation, and a few others
 
 ## Installation
 https://ml-explore.github.io/mlx/build/html/install.html
@@ -18,6 +18,32 @@ Final pass looks a bit different
 eval: split train. loss 3.976042e-03. error 0.62%. misses: 45
 eval: split test . loss 2.221476e-02. error 3.34%. misses: 67
 ```
+
+## Tinygrad
+```sh
+python tinygrad-repro.py
+```
+
+Final pass
+
+```
+eval: split train. loss 5.082616e-03. error 0.75%. misses: 54
+eval: split test . loss 3.346167e-02. error 4.88%. misses: 98
+```
+
+on my M2 Pro
+without JIT, it takes
+```sh
+METAL_XCODE=1 DISABLE_COMPILER_CACHE=1 python lecun1989.py  1724.88s user 152.64s system 106% cpu 29:19.33 total
+```
+
+with JIT
+```sh
+METAL_XCODE=1 DISABLE_COMPILER_CACHE=1 python lecun1989.py  106.67s user 19.59s system 66% cpu 3:09.80 total
+```
+
+<hr>
+
 ## lecun1989-repro
 
 ![teaser](lecun1989.png)
