@@ -19,6 +19,10 @@ eval: split train. loss 3.976042e-03. error 0.62%. misses: 45
 eval: split test . loss 2.221476e-02. error 3.34%. misses: 67
 ```
 
+```
+python mlx-repro.py  188.57s user 98.42s system 113% cpu 4:12.87 total
+```
+
 ## Tinygrad
 ```sh
 python tinygrad-repro.py
